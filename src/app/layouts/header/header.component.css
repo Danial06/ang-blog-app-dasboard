@@ -1,0 +1,15 @@
+header {
+    background-color: rgb(255, 255, 255);
+    height: 80px;
+}
+
+.site-logo {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 5px 20px;
+    border-radius: 15px;
+    font-size: 1.5em;
+
+
+
+}
