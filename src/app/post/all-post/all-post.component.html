@@ -13,4 +13,50 @@
             </div>
         </div>
     </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <div class="card shadow-effect">
+                <div class="card-body">
+                    <table style="width:100%; table-layout: auto;" class="table row-border hover  ">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Post Image</th>
+                                <th>Title</th>
+                                <!-- <th>Excerpt</th> -->
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let post of postArray;let i =index">
+                                <td>{{i+1}}</td>
+                                <td><img src="" calss="img img-fluid" alt=""></td>
+                                <td>{{post.title}}</td>
+                                <!-- <td>{{post.excerpt}}</td> -->
+                                <td>{{post.category.category}}</td>
+                                <td>{{post.createdAt.toMillis() | date}}</td>
+                                <td><button class="btn btn-sm btn-info" routerLink="/posts/new"
+                                        [queryParams]="{id:post.id}">Edit</button></td>
+                                <td><button class="btn btn-sm btn-danger" (click)="OnDelPost(post.id)">Delete</button>
+                                <td><button *ngIf="post.isFeatured=='false'" class="btn btn-sm btn-success"
+                                        (click)="onFeatured(post.id,'true')">Mark as
+                                        featured</button>
+                                <td><button *ngIf="post.isFeatured=='true'" class="btn btn-sm btn-warning"
+                                        (click)="onFeatured(post.id,'false')">Remove
+                                        featured</button>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
 </div>

@@ -4,6 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 // import { AngularFireDatabaseModule } from '@angular/fire/compat/database'; //all these imports for firebase
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore'
+
+
+
+
 import { environment } from 'src/environments/environment.development'
 import { FormsModule } from '@angular/forms';
 
@@ -21,7 +25,7 @@ import { AllPostComponent } from './post/all-post/all-post.component';
 import { NewPostComponent } from './post/new-post/new-post.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http'
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,11 @@ import { HttpClientModule } from '@angular/common/http'
       preventDuplicates: true,
     }), // ToastrModule added
     AngularEditorModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
