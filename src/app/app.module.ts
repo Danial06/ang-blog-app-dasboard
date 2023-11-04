@@ -26,6 +26,9 @@ import { NewPostComponent } from './post/new-post/new-post.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './auth/login/login.component';
+
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     CategoriesComponent,
     AllPostComponent,
-    NewPostComponent
+    NewPostComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -44,6 +48,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 3000,
@@ -53,6 +58,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AngularEditorModule,
     HttpClientModule,
     ReactiveFormsModule
+
 
 
 

@@ -29,7 +29,8 @@ body {
 }
 
 input[type=text],
-input[type=email] {
+input[type=email],
+input[type=password] {
 
 
     width: 100% !important;

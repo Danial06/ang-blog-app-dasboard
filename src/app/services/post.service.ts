@@ -32,7 +32,7 @@ export class PostService {
   uploadImg(postData: any) {
 
     const filePath = `/postImg/${Date.now()}`;
-    console.log(filePath);
+    // console.log(filePath);
 
 
   }
@@ -44,7 +44,7 @@ export class PostService {
 
       const collectionInstance = collection(this.afs, 'Posts');
       addDoc(collectionInstance, postData).then((val) => {  //its a promise method so once its resolved this callback func is executed
-        console.log('Data Save success', val);
+        // console.log('Data Save success', val);
         this.notifcation.showSuccess('Post added', "We've added that");
       })
         .catch((err) => {
@@ -66,7 +66,7 @@ export class PostService {
     const docInstance = doc(this.afs, 'Posts', id);
 
     updateDoc(docInstance, PostData).then((result) => {
-      console.log(result);
+      //console.log(result);
       this.notifcation.showSuccess("We did see that", 'Post Updated');
       this.router.navigate(['/posts']);
     })
