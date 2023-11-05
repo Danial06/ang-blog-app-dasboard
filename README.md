@@ -1,5 +1,5 @@
 ## Preview Site hosted at
-[https://lcuuniverse-dashbord.web.app/login](https://lcuuniverse-dashbord.web.app/login)
+[https://lcuuniverse-dashbord.web.app/login](https://lcuuniverse-dashbord.web.app)
 
 # AngBlogAppDashboard
 
