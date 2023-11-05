@@ -34,7 +34,9 @@ export class NewPostComponent implements OnInit {
             category: [`${this.post.category.categoryId}-${this.post.category.category}`, [Validators.required]],
             postImg: [this.post.postImgPath, [Validators.required]],
             content: [this.post.content, [Validators.required]]
+
           })
+          this.imgSrcUrl = this.post.postImgPath;
           this.formStatus = "Edit";
         })
       } else {
@@ -45,19 +47,10 @@ export class NewPostComponent implements OnInit {
           category: ['', [Validators.required]],
           postImg: ['', [Validators.required]],
           content: ['', [Validators.required]]
+
         })
       }
-
-
-
-
     })
-
-
-
-
-
-
   }
   findThePost(id, res) {
 
@@ -90,16 +83,19 @@ export class NewPostComponent implements OnInit {
     let title = event.target.value;
     this.titleForPermalink = title.replace(/\s/g, '-');
   }
-  showPreview($event) {
+  showPreview(event) {
 
-    const reader = new FileReader();
-    reader.onload = (res) => {
+    // const reader = new FileReader();
+    // reader.onload = (res) => {
 
-      this.imgSrcUrl = res.target.result;
+    //   this.imgSrcUrl = res.target.result;
 
-    }
-    reader.readAsDataURL($event.target.files[0]);
-    this.selectImg = $event.target.files[0];
+    // }
+    // reader.readAsDataURL($event.target.files[0]);
+    // this.selectImg = $event.target.files[0];
+    // console.log(event.target.value);
+    this.imgSrcUrl = event.target.value;
+
   }
   OnFormSubmit() {
     let CategorywId = this.postForm.value.category.split('-') //get category id with category name
@@ -110,7 +106,7 @@ export class NewPostComponent implements OnInit {
         categoryId: CategorywId[0],
         category: CategorywId[1]
       },
-      postImgPath: '',
+      postImgPath: this.imgSrcUrl,
       excerpt: this.postForm.value.excerpt,
       content: this.postForm.value.content,
       isFeatured: false,

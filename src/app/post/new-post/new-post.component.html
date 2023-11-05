@@ -70,7 +70,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="">Post Image</label>
                         <img [src]="imgSrcUrl" alt="previewImage" class="form-control img-fluid img-preview mb-2">
                         <input type="file" class="form-control" accept="image/*" (change)="showPreview($event)"
@@ -80,6 +80,18 @@
                             <div class="alert alert-danger" *ngIf='fc.postImg.touched && fc.postImg.invalid'>postImg
                                 is
                                 required</div>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="">Image URL</label>
+                        <img [src]="imgSrcUrl" alt="previewImage" class="form-control img-fluid img-preview mb-2">
+                        <input type="text" class="form-control" formControlName="postImg"
+                            [ngClass]="{'is-invalid':fc.postImg.touched && fc.postImg.invalid}"
+                            (change)="showPreview($event)">
+                        <div *ngIf="fc.postImg.errors?.required">
+                            <div class="alert alert-danger" *ngIf='fc.postImg.touched && fc.postImg.invalid'>Img Url is
+                                required
+                            </div>
                         </div>
                     </div>
                 </div>

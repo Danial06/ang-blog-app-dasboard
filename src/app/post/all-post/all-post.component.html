@@ -40,11 +40,11 @@
                                 <td><button class="btn btn-sm btn-info" routerLink="/posts/new"
                                         [queryParams]="{id:post.id}">Edit</button></td>
                                 <td><button class="btn btn-sm btn-danger" (click)="OnDelPost(post.id)">Delete</button>
-                                <td><button *ngIf="post.isFeatured=='false'" class="btn btn-sm btn-success"
-                                        (click)="onFeatured(post.id,'true')">Mark as
+                                <td *ngIf="post.isFeatured ==false "><button class="btn btn-sm btn-success"
+                                        (click)="onFeatured(post.id,true)">Mark as
                                         featured</button>
-                                <td><button *ngIf="post.isFeatured=='true'" class="btn btn-sm btn-warning"
-                                        (click)="onFeatured(post.id,'false')">Remove
+                                <td *ngIf="post.isFeatured ==true"><button class="btn btn-sm btn-warning"
+                                        (click)="onFeatured(post.id,false)">Remove
                                         featured</button>
                                 </td>
                             </tr>

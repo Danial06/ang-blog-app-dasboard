@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "category", component: CategoriesComponent, canActivate: [ProductGuardService] },
   { path: "posts", component: AllPostComponent, canActivate: [ProductGuardService] },
-  { path: "posts/new", component: NewPostComponent, canActivate: [ProductGuardService] }
+  { path: "posts/new", component: NewPostComponent }
 
 ];
 

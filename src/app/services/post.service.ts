@@ -85,7 +85,7 @@ export class PostService {
   }
 
   featureChange(id, status) {
-
+    debugger;
     const docInstance = doc(this.afs, 'Posts', id);
     let updatedStatus = {
       isFeatured: status
